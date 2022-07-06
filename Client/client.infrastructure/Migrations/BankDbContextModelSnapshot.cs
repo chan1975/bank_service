@@ -30,6 +30,10 @@ namespace client.infrastructure.Migrations
                         .HasColumnType("int")
                         .HasColumnName("saldo_inicial");
 
+                    b.Property<int>("ClientId")
+                        .HasColumnType("int")
+                        .HasColumnName("id_cliente");
+
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit")
                         .HasColumnName("estado");
@@ -116,6 +120,10 @@ namespace client.infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("AccountId")
+                        .HasColumnType("int")
+                        .HasColumnName("id_cuenta");
 
                     b.Property<int>("Amount")
                         .HasColumnType("int")

@@ -43,7 +43,10 @@ namespace client.application.Features.Client
             if(person is null) throw new BadRequestExeption("No se puede actualizar un cliente sin una persona asociada");
             var clientToUpdate = await _unitOfWork.ClientRepository.GetByIdAsync(client.Id);
             if (clientToUpdate is null) throw new NotFoundExepction(nameof(core.Client), client.Id);
-            var clientUpdated = await _unitOfWork.ClientRepository.UpdateAsync(client);
+            clientToUpdate.Password = client.Password;
+            clientToUpdate.Status = client.Status;
+            clientToUpdate.PersonId = client.PersonId;
+            var clientUpdated = await _unitOfWork.ClientRepository.UpdateAsync(clientToUpdate);
             await _unitOfWork.Complete();
             return clientUpdated;
         }

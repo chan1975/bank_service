@@ -14,6 +14,7 @@ namespace client.infrastructure.Data.Configuration
             builder.Property(x => x.Type).HasColumnName("tipo_cuenta");
             builder.Property(x => x.Balance).HasColumnName("saldo_inicial");
             builder.Property(x => x.IsActive).HasColumnName("estado");
+            builder.Property(x => x.ClientId).HasColumnName("id_cliente");
         }
     }
 }

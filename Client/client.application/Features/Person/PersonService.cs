@@ -42,7 +42,13 @@ namespace client.application.Features.Person
         {
             var personToUpdate = await _unitOfWork.PersonRepository.GetByIdAsync(person.Id);
             if(personToUpdate is null) throw new NotFoundExepction(nameof(core.Person), person.Id);
-            var updatedPerson = await _unitOfWork.PersonRepository.UpdateAsync(person);
+            personToUpdate.Address = person.Address;
+            personToUpdate.Name = person.Name;
+            personToUpdate.Age = person.Age;
+            personToUpdate.Gender = person.Gender;
+            personToUpdate.Identification = person.Identification;
+            personToUpdate.Phone = person.Phone; 
+            var updatedPerson = await _unitOfWork.PersonRepository.UpdateAsync(personToUpdate);
             await _unitOfWork.Complete();
             return updatedPerson;
         }

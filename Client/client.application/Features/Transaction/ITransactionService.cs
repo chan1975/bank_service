@@ -6,5 +6,6 @@ namespace client.application.Features.Transaction
     {
         Task<core.Transaction> CreateTransaction(core.Transaction transaction);
         Task<core.Transaction> DeleteTransaction(int id);
+        
     }
 }

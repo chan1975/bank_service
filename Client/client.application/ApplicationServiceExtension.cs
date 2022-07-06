@@ -1,6 +1,7 @@
 ﻿using client.application.Features.Account;
 using client.application.Features.Client;
 using client.application.Features.Person;
+using client.application.Features.Reports;
 using client.application.Features.Transaction;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -14,6 +15,7 @@ namespace client.application
             services.AddTransient<IClientService, ClientService>();
             services.AddTransient<IAccountService, AccountService>();
             services.AddTransient<ITransactionService, TransactionService>();
+            services.AddTransient<IReportService, ReportService>();
 
             return services;
         }

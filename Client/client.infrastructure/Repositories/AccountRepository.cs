@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using client.application.Contracts.Persistence;
 using client.core;
@@ -16,6 +17,11 @@ namespace client.infrastructure.Repositories
         public async Task<Account> GetByNumber(int number)
         {
             return await _context.Accounts.Where(x => x.Number == number).FirstOrDefaultAsync();
+        }
+
+        public async Task<IEnumerable<Account>> GetByUserId(int userId)
+        {
+            return await _context.Accounts.Where(x => x.ClientId == userId).ToListAsync();
         }
     }
 }

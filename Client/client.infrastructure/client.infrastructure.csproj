@@ -15,6 +15,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\client.application\client.application.csproj" />
       <ProjectReference Include="..\client.core\client.core.csproj" />
     </ItemGroup>
 

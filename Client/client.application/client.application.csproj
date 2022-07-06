@@ -4,4 +4,15 @@
         <TargetFramework>netcoreapp3.1</TargetFramework>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\client.core\client.core.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Features\Account" />
+      <Folder Include="Features\Client" />
+      <Folder Include="Features\Person" />
+      <Folder Include="Features\Transaction" />
+    </ItemGroup>
+
 </Project>
